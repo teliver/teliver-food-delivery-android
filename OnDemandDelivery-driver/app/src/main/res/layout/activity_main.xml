@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/topView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarCart"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="@string/txtAddress"
+        app:titleTextColor="@color/colorWhite" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <com.driverapp.views.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtUpdateOrder"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    app:font_name="@string/font_regular" />
+
+                <com.driverapp.views.CustomTextView
+                    android:id="@+id/txtOrderStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="16sp"
+                    app:font_name="@string/font_regular" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgProcessing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_re_plate" />
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/txtProcessing"
+                        style="@style/imgViewDelivery"
+                        android:layout_marginTop="10dp"
+                        android:enabled="true"
+                        android:text="@string/txtConfirmed" />
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/imgTwo"
+                    style="@style/ImgViewLine" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/imgPickedUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_re_bag" />
+
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/txtPickedUp"
+                        style="@style/imgViewDelivery"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/txtPickedUp" />
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/imgThree"
+                    style="@style/ImgViewLine" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/imgDelivered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_re_ok" />
+
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/txtDelivered"
+                        style="@style/imgViewDelivery"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/txtOrderDelivered" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <com.driverapp.views.CustomTextView
+                    style="@style/TxtViewOrder"
+                    android:text="@string/txtOrderNumber"
+                    android:textSize="11sp" />
+
+                <com.driverapp.views.CustomTextView
+                    style="@style/TxtViewOrder"
+                    android:text="@string/orderId"
+                    android:textColor="@color/colorBlack" />
+
+                <View style="@style/ViewLineOrder" />
+
+                <com.driverapp.views.CustomTextView
+                    style="@style/TxtViewOrder"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/txtName"
+                    android:textSize="11sp" />
+
+                <com.driverapp.views.CustomTextView
+                    style="@style/TxtViewOrder"
+                    android:text="@string/name"
+                    android:textColor="@color/colorBlack" />
+
+                <View style="@style/ViewLineOrder" />
+
+
+                <com.driverapp.views.CustomTextView
+                    style="@style/TxtViewOrder"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/txtMobileNumber"
+                    android:textSize="11sp" />
+
+                <com.driverapp.views.CustomTextView
+                    style="@style/TxtViewOrder"
+                    android:text="@string/txtMobile"
+                    android:textColor="@color/colorBlack" />
+
+                <View style="@style/ViewLineOrder" />
+
+
+                <com.driverapp.views.CustomTextView
+                    style="@style/TxtViewOrder"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/txtDeliverTo"
+                    android:textSize="11sp" />
+
+                <com.driverapp.views.CustomTextView
+                    style="@style/TxtViewOrder"
+                    android:text="@string/txtPlace"
+                    android:textColor="@color/colorBlack" />
+
+                <View style="@style/ViewLineOrder" />
+
+                <com.driverapp.views.CustomTextView
+                    style="@style/TxtViewOrder"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/txtPayment"
+                    android:textSize="11sp" />
+
+                <com.driverapp.views.CustomTextView
+                    style="@style/TxtViewOrder"
+                    android:text="@string/txtPaid"
+                    android:textColor="@color/colorBlack" />
+
+
+                <View
+                    style="@style/ViewLineOrder"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/txtSubtotal"
+                        style="@style/txtViewCheckout"
+                        android:text="@string/txtSubTotal"
+                        android:textColor="@color/colorBlack"
+                        app:font_name="@string/font_regular" />
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/subTotal"
+                        style="@style/txtViewCheckout"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:text="₹829.00"
+                        android:textColor="@color/colorBlack"
+                        app:font_name="@string/font_regular" />
+
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/txtResPromo"
+                        style="@style/txtViewCheckout"
+                        android:layout_below="@id/txtSubtotal"
+                        android:text="@string/txtResPromo"
+                        android:textColor="@color/colorGreen"
+                        app:font_name="@string/font_regular" />
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/resPromo"
+                        style="@style/txtViewCheckout"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/txtSubtotal"
+                        android:text="@string/resPromo"
+                        android:textColor="@color/colorGreen"
+                        app:font_name="@string/font_regular" />
+
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/txtTaxes"
+                        style="@style/txtViewCheckout"
+                        android:layout_below="@id/txtResPromo"
+                        android:text="@string/txtTaxes"
+                        android:textColor="@color/colorHint"
+                        app:font_name="@string/font_regular" />
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/taxes"
+                        style="@style/txtViewCheckout"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/txtResPromo"
+                        android:text="@string/gstTax"
+                        android:textColor="@color/colorHint"
+                        app:font_name="@string/font_regular" />
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/txtPackingCharge"
+                        style="@style/txtViewCheckout"
+                        android:layout_below="@id/txtTaxes"
+                        android:text="@string/txtPackingCharge"
+                        android:textColor="@color/colorHint"
+                        app:font_name="@string/font_regular" />
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/packingCharge"
+                        style="@style/txtViewCheckout"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/txtTaxes"
+                        android:text="@string/packingCharge"
+                        android:textColor="@color/colorHint"
+                        app:font_name="@string/font_regular" />
+
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/txtDeliveryCharge"
+                        style="@style/txtViewCheckout"
+                        android:layout_below="@id/txtPackingCharge"
+                        android:text="@string/txtDeliveryCharge"
+                        android:textColor="@color/colorHint"
+                        app:font_name="@string/font_regular" />
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/deliveryCharge"
+                        style="@style/txtViewCheckout"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/txtPackingCharge"
+                        android:text="@string/deliveryCharge"
+                        android:textColor="@color/colorHint"
+                        app:font_name="@string/font_regular" />
+
+
+                    <View
+                        android:id="@+id/totalVie"
+                        style="@style/ViewLine"
+                        android:layout_below="@id/deliveryCharge"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/colorBackGround" />
+
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/txtGrandTotal"
+                        style="@style/txtViewCheckout"
+                        android:layout_below="@id/totalVie"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/txtFinaltotal"
+                        android:textColor="@color/colorBlack"
+                        app:font_name="@string/font_regular" />
+
+                    <com.driverapp.views.CustomTextView
+                        android:id="@+id/grandTotal"
+                        style="@style/txtViewCheckout"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/totalVie"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/grandTotal"
+                        android:textColor="@color/colorBlack"
+                        app:font_name="@string/font_regular" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

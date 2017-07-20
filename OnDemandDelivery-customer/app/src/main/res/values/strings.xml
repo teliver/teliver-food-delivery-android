@@ -1,0 +1,48 @@
+<resources>
+
+
+    <string name="font_bold">fonts/roboto_bold.ttf</string>
+    <string name="font_regular">fonts/font_rg.ttf</string>
+    <string name="font_lt">fonts/roboto_light.ttf</string>
+    <string name="font_medium">fonts/roboto_medium.ttf</string>
+
+
+    <string name="app_name">OnDemand-Customer</string>
+    <string name="textTrack">Track</string>
+    <string name="txtorderplaced">YOUR ORDER IS PLACED</string>
+    <string name="txtPackageDispatched">YOUR PACKAGE IS DISPATCHED</string>
+    <string name="txtOnRoute">Order Picked Up \n\n<u>Track With Teliver</u></string>
+    <string name="txtOrderDeivered">Order T \'elivered</string>
+    <string name="txtInKitchen">Order Confirmed</string>
+    <string name="txtDeliveryDetails">YOUR DELIVERY DETAILS</string>
+    <string name="txtName">Name</string>
+    <string name="txtCart">Cart</string>
+    <string name="txtOrder">Order</string>
+    <string name="txtAddress">Delivery Address</string>
+    <string name="txtMobile">Mobile Number</string>
+    <string name="txtCartItems">YOUR ORDER ITEMS</string>
+    <string name="txtStartTracking">Start Tracking</string>
+    <string name="txtPaymentSuccess">Order Received</string>
+    <string name="txtOrderConfirmed">ORDER CONFIRMED</string>
+    <string name="txtTeliverId">The tracking id you received from Teliver, enter it to track your order</string>
+    <string name="txtNearYou">Near your Delivery Address (View in Maps)</string>
+    <string name="txtFoodHint">Hot and Tasty food will be on the way soon</string>
+    <string name="txtProcessing">Order Processing</string>
+    <string name="txtOutToDelivery">Your order is now out for delivery.Track your Order</string>
+    <string name="txtNearDoorPush">Your order has been confirmed by Restaurant. Soon it will be out for delivery.</string>
+    <string name="txtDeliveredPush">Your order has been delivered successfully.</string>
+    <string name="txtDeliveryAssigned">Order has been confirmed by Restaurant. Waiting for Delivery Agent</string>
+    <string name="btnTxtTracker">Track your order</string>
+    <string name="txtSubTotal">Subtotal</string>
+    <string name="txtResPromo">Coupon Code</string>
+    <string name="txtTaxes">GST (18%)</string>
+    <string name="txtFinaltotal">You Paid</string>
+    <string name="symbolRupee">₹</string>
+    <string name="txtorderID">Order Id</string>
+    <string name="oderId">164752266</string>
+    <string name="txtPaymentMode">PAYMENT MODE</string>
+    <string name="paymentMode">CARD PAYMENT</string>
+    <string name="txtPackingCharge">Packaging Charge</string>
+    <string name="txtDeliveryCharge">Delivery Charge</string>
+
+</resources>

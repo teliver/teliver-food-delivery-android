@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/layoutdelivered"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_telivered"
+            android:paddingTop="50dp"
+            android:paddingBottom="30dp"
+            />
+
+        <com.driverapp.views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order T\'elivered"
+            android:padding="10dp"
+            app:font_name="@string/font_bold"
+            android:textSize="18sp"
+            android:textColor="#057324"
+            android:paddingBottom="50dp"/>
+
+        <com.driverapp.views.CustomTextView
+            android:id="@+id/txtOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:layout_gravity="end"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="20dp"
+            android:textSize="16sp"
+            android:textColor="#057324"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

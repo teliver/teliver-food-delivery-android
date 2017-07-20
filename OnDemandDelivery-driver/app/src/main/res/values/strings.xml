@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">OnDemand-Driver</string>
+    <string name="txtAddress">Delivery Details</string>
+    <string name="txtDeliveryDetail">YOUR DELIVERY DETAILS</string>
+    <string name="name">Selvakumar.P</string>
+    <string name="txtMobile">9488585651</string>
+    <string name="txtProductDispatched">your product is dispatched ,use this tracking id to track your order</string>
+    <string name="txtNearYou">your product is near your doorsteps,get ready to collect</string>
+    <string name="textAmountPaid">Amount Paid Successfully </string>
+    <string name="textOrderConfirmed">Your order is confirmed and processing</string>
+    <string name="txtProductDelivered">your product from Teliver is Delivered,we hope to see you soon.</string>
+    <string name="txtInKitchen">your payment is successful and we are processing your order....</string>
+    <string name="txtOrderProcessing">Confirmed</string>
+    <string name="txtOrderPicked">Order out to Delivery</string>
+    <string name="txtConfirmed">Confirmed</string>
+    <string name="txtPickedUp">Picked Up</string>
+    <string name="txtOrderDelivered">T\'elivered</string>
+    <string name="txtTelivered">Order T\'elivered</string>
+    <string name="txtUpdateOrder">Order Status :  </string>
+    <string name="txtOrderDetails">ORDER DETAILS</string>
+    <string name="txtOrderNumber">Order ID</string>
+    <string name="orderId">164752266</string>
+    <string name="txtPayment">Payment Mode</string>
+    <string name="txtDeliverTo">Delivery Location</string>
+    <string name="txtMobileNumber">Mobile Number</string>
+    <string name="txtPlace">No:9, 2nd floor Venkateshwara Nagar, Adyar, Chennai-600020</string>
+    <string name="txtPaid">Card Payment</string>
+    <string name="txtOrderSummary">Order Summary</string>
+    <string name="txtSubTotal">Subtotal</string>
+    <string name="txtResPromo">Restaurant promo</string>
+    <string name="txtTaxes">GST(18%)</string>
+    <string name="txtFinaltotal">Restaurant Total</string>
+    <string name="txtPackingCharge">Packaging Charge</string>
+    <string name="txtDeliveryCharge">Delivery Charge</string>
+    <string name="txtName">Name</string>
+    <string name="grandTotal">₹968.00</string>
+    <string name="deliveryCharge">₹50.00</string>
+    <string name="gstTax">₹138.96</string>
+    <string name="packingCharge">₹8.00</string>
+    <string name="resPromo">- ₹57.00</string>
+
+    <!--fonts -->
+
+    <string name="font_bold">fonts/roboto_bold.ttf</string>
+    <string name="font_regular">fonts/font_rg.ttf</string>
+    <string name="font_lt">fonts/roboto_light.ttf</string>
+    <string name="font_medium">fonts/roboto_medium.ttf</string>
+
+</resources>
