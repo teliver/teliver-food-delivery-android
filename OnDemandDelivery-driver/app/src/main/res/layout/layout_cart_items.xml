@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="7dp"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginTop="4dp">
+
+        <ImageView
+            android:id="@+id/imgFirstItem"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="4dp"
+            android:padding="0dp"
+            android:src="@drawable/ic_veg"/>
+
+
+        <com.driverapp.views.CustomTextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/imgFirstItem"
+            android:layout_toRightOf="@id/imgFirstItem"
+            android:textColor="@color/colorBlack"
+            android:textSize="17sp"
+            app:font_name="@string/font_lt"
+            android:ellipsize="end"/>
+
+
+            <TextView
+                android:id="@+id/txtQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorBlack"
+                android:layout_below="@id/txtName"
+                android:textSize="14sp"
+                android:layout_toEndOf="@id/imgFirstItem"
+                android:layout_toRightOf="@id/imgFirstItem"/>
+
+        <ImageView
+            android:id="@+id/multiplyFirstItem"
+            android:layout_width="12dp"
+            android:layout_height="10dp"
+            android:layout_below="@id/txtName"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@id/txtQuantity"
+            android:layout_toRightOf="@id/txtQuantity"
+            android:src="@android:color/transparent"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/txtRupImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtName"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/multiplyFirstItem"
+            android:layout_toRightOf="@id/multiplyFirstItem"
+            android:text="₹"
+            android:textColor="@color/colorBlack" />
+
+
+        <TextView
+            android:id="@+id/txtItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtName"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/txtRupImg"
+            android:layout_toRightOf="@id/txtRupImg"
+            android:textColor="@color/colorBlack" />
+
+
+        <TextView
+            android:id="@+id/txtFinalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/txtName"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorGreen"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/ViewLineOrder"
+        android:layout_marginTop="4dp" />
+
+</LinearLayout>

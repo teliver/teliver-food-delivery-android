@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarCart"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="@string/txtOrder"
+        app:titleTextColor="#ffffff" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarCart"
+        android:layout_above="@+id/btnTracker"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.customer.views.CustomTextView
+                    android:id="@+id/txtOrderId"
+                    style="@style/txtViewCart"
+                    android:layout_weight="1"
+                    android:text="@string/txtorderID"
+                    android:textColor="@color/colorBlack"
+                    app:font_name="@string/font_regular" />
+
+                <com.customer.views.CustomTextView
+                    android:id="@+id/orderId"
+                    style="@style/txtViewCart"
+                    android:text="@string/oderId"
+                    android:textColor="@color/colorBlack"
+                    app:font_name="@string/font_regular" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <com.customer.views.CustomTextView
+                    android:id="@+id/txtSubtotal"
+                    style="@style/txtViewCart"
+                    android:layout_weight="1"
+                    android:text="@string/txtSubTotal"
+                    android:textColor="@color/colorBlack"
+                    app:font_name="@string/font_regular" />
+
+                <com.customer.views.CustomTextView
+                    android:id="@+id/subTotal"
+                    style="@style/txtViewCart"
+                    android:text="₹829.00"
+                    android:textColor="@color/colorBlack"
+                    app:font_name="@string/font_regular" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.customer.views.CustomTextView
+                    android:id="@+id/txtpromo"
+                    style="@style/txtViewCart"
+                    android:layout_weight="1"
+                    android:text="@string/txtResPromo"
+                    android:textColor="@color/colorGreen"
+                    app:font_name="@string/font_regular" />
+
+                <com.customer.views.CustomTextView
+                    style="@style/txtViewCart"
+                    android:text="- ₹57.00"
+                    android:textColor="@color/colorGreen"
+                    app:font_name="@string/font_regular" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <com.customer.views.CustomTextView
+                    android:id="@+id/txtTaxes"
+                    style="@style/txtViewCart"
+                    android:layout_weight="1"
+                    android:text="@string/txtTaxes"
+                    android:textColor="@color/colorLine"
+                    app:font_name="@string/font_regular" />
+
+                <com.customer.views.CustomTextView
+                    style="@style/txtViewCart"
+                    android:text="₹138.96"
+                    android:textColor="@color/colorLine"
+                    app:font_name="@string/font_regular" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <com.customer.views.CustomTextView
+                    android:id="@+id/txtPackingCharge"
+                    style="@style/txtViewCart"
+                    android:layout_weight="1"
+                    android:text="@string/txtPackingCharge"
+                    android:textColor="@color/colorLine"
+                    app:font_name="@string/font_regular" />
+
+                <com.customer.views.CustomTextView
+                    style="@style/txtViewCart"
+                    android:text="₹8.00"
+                    android:textColor="@color/colorLine"
+                    app:font_name="@string/font_regular" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <com.customer.views.CustomTextView
+                    android:id="@+id/txtDeliveryCharge"
+                    style="@style/txtViewCart"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/txtDeliveryCharge"
+                    android:textColor="@color/colorLine"
+                    app:font_name="@string/font_regular" />
+
+                <com.customer.views.CustomTextView
+                    style="@style/txtViewCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="₹50.00"
+                    android:textColor="@color/colorLine"
+                    app:font_name="@string/font_regular" />
+
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/view"
+                style="@style/ViewLine" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <com.customer.views.CustomTextView
+                    android:id="@+id/txtFinalTotal"
+                    style="@style/txtViewCart"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/txtFinaltotal"
+                    android:textColor="@color/colorBlack"
+                    app:font_name="@string/font_regular" />
+
+                <com.customer.views.CustomTextView
+                    style="@style/txtViewCart"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
+                    android:text="₹968.00"
+                    android:textColor="@color/colorBlack"
+                    app:font_name="@string/font_regular" />
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/btnTracker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="@string/btnTxtTracker"
+        android:textColor="@color/colorWhite" />
+
+
+</RelativeLayout>
