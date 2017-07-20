@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="TeliverSdk-1.0.7">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/378eed2bf89b262cac7f3656bda3561d42d512ab/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/378eed2bf89b262cac7f3656bda3561d42d512ab/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.teliver.sdk/TeliverSdk/1.0.7/30568c320241334df36ed82158e0ab9391ddc71f/TeliverSdk-1.0.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
