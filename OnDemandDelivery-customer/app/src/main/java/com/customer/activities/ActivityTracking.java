@@ -38,7 +38,7 @@ import java.util.ArrayList;
 
 public class ActivityTracking extends AppCompatActivity {
 
-    private String username = "shivakumar",driverName = "driver_4";
+    private String username = "user_1",driverName = "driver_4";
 
     private Application application;
 

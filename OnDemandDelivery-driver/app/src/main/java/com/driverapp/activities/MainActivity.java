@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void sendEventPush(final String pushMessage, String tag) {
-        PushData pushData = new PushData("selva");
+        PushData pushData = new PushData("user_1");
         pushData.setMessage(pushMessage);
         try {
             JSONObject jsonObject = new JSONObject();
