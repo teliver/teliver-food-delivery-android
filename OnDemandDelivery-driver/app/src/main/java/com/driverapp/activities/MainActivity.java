@@ -43,13 +43,11 @@ import com.teliver.sdk.models.UserBuilder;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-
-    private String trackingId = "TELIVERTRK_", username = "driver_4";
+    private String trackingId = "TELIVERTRK_100", username = "driver_1";
 
     private com.driverapp.Application application;
 
@@ -65,10 +63,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         application = (com.driverapp.Application) getApplicationContext();
         TLog.setVisible(true);
-        trackingId = trackingId + new Random().nextInt(1000);
+        /*trackingId = trackingId + new Random().nextInt(1000);
         if (!application.getBooleanInPef("created"))
             application.storeStringInPref(Constants.TRACKING_ID, trackingId);
-        application.storeBooleanInPref("created", true);
+        application.storeBooleanInPref("created", true);*/
     }
 
 
@@ -112,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setImages(imgProcessing, imgPickedUp, imgDelivered);
         Teliver.identifyUser(new UserBuilder(username).setUserType(UserBuilder.USER_TYPE.OPERATOR).registerPush().build());
         if (Utils.checkPermission(this))
-            checkGps();
+        //    checkGps();
         txtProcessing.setEnabled(true);
         imgProcessing.setEnabled(true);
     }
@@ -129,10 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             txtView.setEnabled(false);
             txtView.setOnClickListener(this);
         }
-
-
     }
-
 
     @Override
     public void onClick(View v) {
@@ -167,35 +162,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 application.storeBooleanInPref(Constants.STEP_FOUR, true);
                 txtDelivered.setEnabled(false);
                 imgDelivered.setEnabled(false);
-                Teliver.stopTrip(application.getStringInPref(Constants.TRACKING_ID));
+                Teliver.stopTrip(trackingId);
                 application.deletePreference();
                 break;
         }
     }
 
     private void sendEventPush(final String pushMessage, String tag) {
-        PushData pushData = new PushData("user_1");
-        pushData.setMessage(pushMessage);
+        String[] users = new String[]{"user_1","user_2"};
+        PushData pushData = new PushData(users);
+        pushData.setMessage(tag);
         try {
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("consumer", "selvakumar");
+            jsonObject.put("status", pushMessage);
             jsonObject.put("operator", "driver_1");
             pushData.setPayload(jsonObject.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Teliver.sendEventPush(application.getStringInPref(Constants.TRACKING_ID), pushData, tag);
+        Teliver.sendEventPush(trackingId, pushData, tag);
     }
 
     private void startTrip() {
-            TripBuilder tripBuilder = new TripBuilder(application.getStringInPref(Constants.TRACKING_ID));
+            TripBuilder tripBuilder = new TripBuilder(trackingId);
             tripBuilder.withInterval(1000);
             tripBuilder.withDistance(5);
             Teliver.startTrip(tripBuilder.build());
             Teliver.setTripListener(new TripListener() {
                 @Override
                 public void onTripStarted(Trip tripDetails) {
-
+                    sendEventPush("1","order confirmed");
                 }
 
                 @Override
@@ -213,7 +209,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
             });
-
     }
 
     @Override
@@ -268,9 +263,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onResult(@NonNull LocationSettingsResult locationSettingsResult) {
                 Status status = locationSettingsResult.getStatus();
-                if (status.getStatusCode() == LocationSettingsStatusCodes.SUCCESS) {
-
-                } else if (status.getStatusCode() == LocationSettingsStatusCodes.RESOLUTION_REQUIRED) {
+                if (status.getStatusCode() == LocationSettingsStatusCodes.RESOLUTION_REQUIRED) {
                     try {
                         status.startResolutionForResult(MainActivity.this, Constants.SHOW_GPS_DIALOG);
                     } catch (Exception e) {
@@ -306,6 +299,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtView.setTextColor(ContextCompat.getColor(this, R.color.colorGreen));
         imgLine.setColorFilter(ContextCompat.getColor(this, R.color.colorGreen));
         img.setColorFilter(ContextCompat.getColor(this, R.color.colorGreen));
-
     }
 }

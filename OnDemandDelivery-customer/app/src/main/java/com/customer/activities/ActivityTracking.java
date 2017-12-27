@@ -38,7 +38,7 @@ import java.util.ArrayList;
 
 public class ActivityTracking extends AppCompatActivity {
 
-    private String username = "user_1",driverName = "driver_4";
+    private String username = "user_1";
 
     private Application application;
 
@@ -88,7 +88,7 @@ public class ActivityTracking extends AppCompatActivity {
         });
 
         if (Utils.checkPermission(this)) {
-            checkGps();
+            //checkGps();
         }
         Teliver.identifyUser(new UserBuilder(username).
                 setUserType(UserBuilder.USER_TYPE.CONSUMER).registerPush().build());

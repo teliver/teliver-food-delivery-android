@@ -16,6 +16,8 @@ import com.google.gson.GsonBuilder;
 import com.teliver.sdk.core.Teliver;
 import com.teliver.sdk.models.NotificationData;
 
+import org.json.JSONObject;
+
 import java.util.Map;
 
 
@@ -27,7 +29,7 @@ public class FirebaseMessaging extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
-        Log.d("TELIVER::", "onMessageReceived: PUSH TRy == " +remoteMessage.toString());
+        Log.d("TELIVER::", "onMessageReceived: PUSH TRY == " +remoteMessage.toString());
         try {
             if (Teliver.isTeliverPush(remoteMessage)) {
                 Map<String, String> pushData = remoteMessage.getData();
@@ -37,7 +39,9 @@ public class FirebaseMessaging extends FirebaseMessagingService {
                 application = (Application) getApplicationContext();
                 application.storeStringInPref(Constants.TRACKING_ID, data.getTrackingID());
                 Intent intent = new Intent(this, ActivityHome.class);
-                intent.putExtra("msg", data.getMessage());
+                JSONObject jsonObject = new JSONObject(data.getPayload());
+                String status = jsonObject.getString("status");
+                intent.putExtra("msg", status);
                 intent.setAction("message");
                 LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
                 if (data.getMessage().equalsIgnoreCase("2"))

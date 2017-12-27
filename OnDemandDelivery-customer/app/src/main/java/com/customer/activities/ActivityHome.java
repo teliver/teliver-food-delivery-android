@@ -18,7 +18,6 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -66,6 +65,8 @@ public class ActivityHome extends AppCompatActivity implements View.OnClickListe
     private RelativeLayout layoutTracking;
 
     private AlertDialog dialog;
+
+    private String track = "TELIVERTRK_101";
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -136,13 +137,13 @@ public class ActivityHome extends AppCompatActivity implements View.OnClickListe
 
         dialog.show();
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
 
         if (intent != null) {
             String msg = getIntent().getStringExtra("msg");
             setStates(msg);
         }
-        txtOnRoute.setEnabled(false);
+        txtOnRoute.setEnabled(true);
     }
 
     private void maintainState() {
@@ -257,27 +258,27 @@ public class ActivityHome extends AppCompatActivity implements View.OnClickListe
         application.storeBooleanInPref(step, true);
     }
 
-    public void startTracking(String trackingID) {
+    public void startTracking(String track) {
 
-        TrackingBuilder builder = new TrackingBuilder(new MarkerOption(trackingID)).withListener(new TrackingListener() {
+        TrackingBuilder builder = new TrackingBuilder(new MarkerOption(track)).withListener(new TrackingListener() {
             @Override
             public void onTrackingStarted(String trackingId) {
-                Log.d("TELIVER::", "onTrackingStarted: " + trackingId);
+
             }
 
             @Override
             public void onLocationUpdate(String trackingId, TLocation location) {
-                Log.d("TELIVER::", "onLocationUpdate: " + location.getLatitude() + location.getLongitude());
+
             }
 
             @Override
             public void onTrackingEnded(String trackingId) {
-                Log.d("TELIVER::", "onTrackingEnded: " + trackingId);
+
             }
 
             @Override
             public void onTrackingError(String reason) {
-                Log.d("TELIVER::", "onTrackingError: " + reason);
+
             }
         });
         Teliver.startTracking(builder.build());
@@ -287,8 +288,7 @@ public class ActivityHome extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.initTeliver:
-                String trackingId = application.getStringInPref(Constants.TRACKING_ID);
-                startTracking(trackingId);
+                startTracking(track);
                 break;
         }
     }
@@ -321,17 +321,11 @@ public class ActivityHome extends AppCompatActivity implements View.OnClickListe
             googleMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)).position(latLng));
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14));
         }
+
     }
 
     @Override
     public void onConnectionSuspended(int i) {
-
-    }
-
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
 
     }
 
@@ -366,20 +360,3 @@ public class ActivityHome extends AppCompatActivity implements View.OnClickListe
         super.onDestroy();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

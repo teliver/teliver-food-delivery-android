@@ -6,7 +6,6 @@
     <string name="font_lt">fonts/roboto_light.ttf</string>
     <string name="font_medium">fonts/roboto_medium.ttf</string>
 
-
     <string name="app_name">OnDemand-Customer</string>
     <string name="textTrack">Track</string>
     <string name="txtorderplaced">YOUR ORDER IS PLACED</string>

@@ -16,7 +16,7 @@ public class Application extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        Teliver.init(this, "your_teliver_key");
+        Teliver.init(this, "teliver_key");
         TLog.setVisible(true);
         sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
         editor = sharedPreferences.edit();

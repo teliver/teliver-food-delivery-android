@@ -2,8 +2,8 @@
     <string name="app_name">OnDemand-Driver</string>
     <string name="txtAddress">Delivery Details</string>
     <string name="txtDeliveryDetail">YOUR DELIVERY DETAILS</string>
-    <string name="name">Selvakumar.P</string>
-    <string name="txtMobile">9488585651</string>
+    <string name="name">name</string>
+    <string name="txtMobile">mobile number</string>
     <string name="txtProductDispatched">your product is dispatched ,use this tracking id to track your order</string>
     <string name="txtNearYou">your product is near your doorsteps,get ready to collect</string>
     <string name="textAmountPaid">Amount Paid Successfully </string>
