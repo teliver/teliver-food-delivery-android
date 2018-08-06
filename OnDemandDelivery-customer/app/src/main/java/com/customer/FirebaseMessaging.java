@@ -5,9 +5,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.NotificationCompat;
-import android.util.Log;
 
 import com.customer.activities.ActivityHome;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -28,14 +27,10 @@ public class FirebaseMessaging extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
-
-        Log.d("TELIVER::", "onMessageReceived: PUSH TRY == " +remoteMessage.toString());
         try {
             if (Teliver.isTeliverPush(remoteMessage)) {
                 Map<String, String> pushData = remoteMessage.getData();
                 final NotificationData data = new GsonBuilder().create().fromJson(pushData.get("description"), NotificationData.class);
-                Log.d("TELIVER::", "onMessageReceived: " + "tracking id ==" + data.getTrackingID()
-                        + "commnad ==" + data.getCommand() + "message == " + data.getMessage());
                 application = (Application) getApplicationContext();
                 application.storeStringInPref(Constants.TRACKING_ID, data.getTrackingID());
                 Intent intent = new Intent(this, ActivityHome.class);
@@ -62,7 +57,6 @@ public class FirebaseMessaging extends FirebaseMessagingService {
         notification.setContentTitle("Teliver");
         notification.setContentText(pushMessage);
         notification.setSmallIcon(R.drawable.ic_scooter);
-        notification.setLargeIcon(Utils.getBitmapIcon(this));
 
         notification.setStyle(new NotificationCompat.BigTextStyle().bigText(pushMessage).setBigContentTitle("Teliver"));
         Intent intent = new Intent(this, ActivityHome.class);

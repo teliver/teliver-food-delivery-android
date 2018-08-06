@@ -4,15 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 
 public class Utils {
     public void init(TextView txtView, Context context, AttributeSet attrs) {
@@ -60,12 +57,4 @@ public class Utils {
         return false;
     }
 
-    public static Bitmap getBitmapIcon(Context context) {
-           try {
-        return Glide.with(context).load(R.drawable.ic_notification_icon).
-                asBitmap().into(144, 144).get();
-    } catch (Exception e) {
-        return null;
-    }
-}
 }

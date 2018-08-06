@@ -4,15 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 
 
 public class Utils {
@@ -61,15 +58,6 @@ public class Utils {
             } else return true;
         } else return true;
         return false;
-    }
-
-    public static Bitmap getBitmapIcon(Context context) {
-        try {
-            return Glide.with(context).load(R.mipmap.ic_launcher).
-                    asBitmap().into(144, 144).get();
-        } catch (Exception e) {
-            return null;
-        }
     }
 
 }

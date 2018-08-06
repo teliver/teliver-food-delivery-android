@@ -85,17 +85,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 onBackPressed();
             }
         });
-        txtOrderStatus = (TextView) findViewById(R.id.txtOrderStatus);
-        imgViewProcessing = (ImageView) findViewById(R.id.imgTwo);
-        imgViewPickedUp = (ImageView) findViewById(R.id.imgThree);
-        txtProcessing = (TextView) findViewById(R.id.txtProcessing);
-        txtPickedUp = (TextView) findViewById(R.id.txtPickedUp);
-        txtDelivered = (TextView) findViewById(R.id.txtDelivered);
-        imgProcessing = (ImageView) findViewById(R.id.imgProcessing);
-        imgPickedUp = (ImageView) findViewById(R.id.imgPickedUp);
-        imgDelivered = (ImageView) findViewById(R.id.imgDelivered);
+        txtOrderStatus = findViewById(R.id.txtOrderStatus);
+        imgViewProcessing = findViewById(R.id.imgTwo);
+        imgViewPickedUp = findViewById(R.id.imgThree);
+        txtProcessing = findViewById(R.id.txtProcessing);
+        txtPickedUp = findViewById(R.id.txtPickedUp);
+        txtDelivered = findViewById(R.id.txtDelivered);
+        imgProcessing = findViewById(R.id.imgProcessing);
+        imgPickedUp = findViewById(R.id.imgPickedUp);
+        imgDelivered = findViewById(R.id.imgDelivered);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ArrayList<CartItems> listCartItems = new ArrayList<>();
         AdapterCartItems adapterCartItems = new AdapterCartItems();
@@ -110,8 +110,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setImages(imgProcessing, imgPickedUp, imgDelivered);
         Teliver.identifyUser(new UserBuilder(username).setUserType(UserBuilder.USER_TYPE.OPERATOR).registerPush().build());
         if (Utils.checkPermission(this))
-        //    checkGps();
-        txtProcessing.setEnabled(true);
+            //    checkGps();
+            txtProcessing.setEnabled(true);
         imgProcessing.setEnabled(true);
     }
 
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void sendEventPush(final String pushMessage, String tag) {
-        String[] users = new String[]{"user_1","user_2"};
+        String[] users = new String[]{"user_1", "user_2"};
         PushData pushData = new PushData(users);
         pushData.setMessage(tag);
         try {
@@ -184,31 +184,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void startTrip() {
-            TripBuilder tripBuilder = new TripBuilder(trackingId);
-            tripBuilder.withInterval(1000);
-            tripBuilder.withDistance(5);
-            Teliver.startTrip(tripBuilder.build());
-            Teliver.setTripListener(new TripListener() {
-                @Override
-                public void onTripStarted(Trip tripDetails) {
-                    sendEventPush("1","order confirmed");
-                }
+        TripBuilder tripBuilder = new TripBuilder(trackingId);
+        tripBuilder.withInterval(1000);
+        tripBuilder.withDistance(5);
+        Teliver.startTrip(tripBuilder.build());
+        Teliver.setTripListener(new TripListener() {
+            @Override
+            public void onTripStarted(Trip tripDetails) {
+                sendEventPush("1", "order confirmed");
+            }
 
-                @Override
-                public void onLocationUpdate(Location location) {
+            @Override
+            public void onLocationUpdate(Location location) {
 
-                }
+            }
 
-                @Override
-                public void onTripEnded(String trackingID) {
+            @Override
+            public void onTripEnded(String trackingID) {
 
-                }
+            }
 
-                @Override
-                public void onTripError(String reason) {
+            @Override
+            public void onTripError(String reason) {
 
-                }
-            });
+            }
+        });
     }
 
     @Override

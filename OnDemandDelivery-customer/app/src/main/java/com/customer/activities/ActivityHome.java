@@ -97,21 +97,21 @@ public class ActivityHome extends AppCompatActivity implements View.OnClickListe
         View view = getLayoutInflater().inflate(R.layout.layout_tracking_steps, null);
         view.setPadding(8, 0, 8, 0);
 
-        txtPayment = (TextView) view.findViewById(R.id.txtpayment);
-        txtInKitchen = (TextView) view.findViewById(R.id.txtInKitchen);
-        txtOnRoute = (TextView) view.findViewById(R.id.initTeliver);
+        txtPayment = view.findViewById(R.id.txtpayment);
+        txtInKitchen = view.findViewById(R.id.txtInKitchen);
+        txtOnRoute = view.findViewById(R.id.initTeliver);
         txtOnRoute.setOnClickListener(this);
-        txtDeliverHint = (TextView) view.findViewById(R.id.txtDeliveryHint);
-        txtDelivered = (TextView) view.findViewById(R.id.txtDelivered);
-        imgOne = (ImageView) view.findViewById(R.id.imgOne);
-        imgTwo = (ImageView) view.findViewById(R.id.imgTwo);
-        imgThree = (ImageView) view.findViewById(R.id.imgThree);
-        imgFour = (ImageView) view.findViewById(R.id.imgFour);
-        imgViewOne = (ImageView) view.findViewById(R.id.viewOne);
-        imgViewtwo = (ImageView) view.findViewById(R.id.viewTwo);
-        imgViewThree = (ImageView) view.findViewById(R.id.viewThree);
-        layoutDelivered = (LinearLayout) view.findViewById(R.id.layoutdelivered);
-        layoutTracking = (RelativeLayout) view.findViewById(R.id.layoutTracker);
+        txtDeliverHint = view.findViewById(R.id.txtDeliveryHint);
+        txtDelivered = view.findViewById(R.id.txtDelivered);
+        imgOne = view.findViewById(R.id.imgOne);
+        imgTwo = view.findViewById(R.id.imgTwo);
+        imgThree = view.findViewById(R.id.imgThree);
+        imgFour = view.findViewById(R.id.imgFour);
+        imgViewOne = view.findViewById(R.id.viewOne);
+        imgViewtwo = view.findViewById(R.id.viewTwo);
+        imgViewThree = view.findViewById(R.id.viewThree);
+        layoutDelivered = view.findViewById(R.id.layoutdelivered);
+        layoutTracking = view.findViewById(R.id.layoutTracker);
 
         alert.setView(view);
 

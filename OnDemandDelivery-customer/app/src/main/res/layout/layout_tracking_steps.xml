@@ -81,7 +81,6 @@
             style="@style/ImageViewHome"
             android:layout_below="@id/imgTwo" />
 
-
         <ImageView
             android:id="@+id/imgThree"
             style="@style/ImageOk"
