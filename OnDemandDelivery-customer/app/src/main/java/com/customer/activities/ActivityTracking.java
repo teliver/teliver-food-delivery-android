@@ -1,19 +1,21 @@
 package com.customer.activities;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.customer.AdapterCartItems;
 import com.customer.Application;
@@ -21,22 +23,14 @@ import com.customer.Constants;
 import com.customer.Model;
 import com.customer.R;
 import com.customer.Utils;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.PendingResult;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.location.LocationSettingsRequest;
-import com.google.android.gms.location.LocationSettingsResult;
-import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.teliver.sdk.core.TLog;
 import com.teliver.sdk.core.Teliver;
 import com.teliver.sdk.models.UserBuilder;
 
 import java.util.ArrayList;
 
-public class ActivityTracking extends AppCompatActivity {
+public class ActivityTracking extends AppCompatActivity implements OnSuccessListener<Location> {
 
     private String username = "user_1";
 
@@ -87,9 +81,9 @@ public class ActivityTracking extends AppCompatActivity {
             }
         });
 
-        if (Utils.checkPermission(this)) {
-            //checkGps();
-        }
+        if (Utils.checkLPermission(this))
+            Utils.enableGPS(this, this);
+
         Teliver.identifyUser(new UserBuilder(username).
                 setUserType(UserBuilder.USER_TYPE.CONSUMER).registerPush().build());
     }
@@ -97,36 +91,6 @@ public class ActivityTracking extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-    }
-
-
-    private void checkGps() {
-        GoogleApiClient googleApiClient = new GoogleApiClient.Builder(this)
-                .addApi(LocationServices.API)
-                .build();
-        googleApiClient.connect();
-
-        LocationRequest locationRequest = LocationRequest.create();
-        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-
-        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
-                .addLocationRequest(locationRequest);
-        builder.setAlwaysShow(true);
-
-        PendingResult<LocationSettingsResult> result = LocationServices.SettingsApi.checkLocationSettings(googleApiClient, builder.build());
-        result.setResultCallback(new ResultCallback<LocationSettingsResult>() {
-            @Override
-            public void onResult(@NonNull LocationSettingsResult locationSettingsResult) {
-                Status status = locationSettingsResult.getStatus();
-                 if (status.getStatusCode() == LocationSettingsStatusCodes.RESOLUTION_REQUIRED) {
-                    try {
-                        status.startResolutionForResult(ActivityTracking.this, Constants.SHOW_GPS_DIALOG);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
     }
 
     @Override
@@ -141,11 +105,17 @@ public class ActivityTracking extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case Constants.COARSE_LOCATION_PERMISSION:
-                if (grantResults[0] != PackageManager.PERMISSION_GRANTED)
-                    finish();
-                else checkGps();
+        if (requestCode==115){
+            if (!Utils.isPermissionOk(grantResults)){
+                Toast.makeText(this,"Location permission denied",Toast.LENGTH_SHORT).show();
+                finish();
+            }
+            else Utils.enableGPS(this,this);
         }
+    }
+
+    @Override
+    public void onSuccess(Location location) {
+        Log.e("onSuccess::",location.getLatitude()+"");
     }
 }

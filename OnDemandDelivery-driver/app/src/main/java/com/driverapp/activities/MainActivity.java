@@ -1,22 +1,23 @@
 package com.driverapp.activities;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.driverapp.AdapterCartItems;
 import com.driverapp.Constants;
@@ -32,6 +33,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.teliver.sdk.core.TLog;
 import com.teliver.sdk.core.Teliver;
 import com.teliver.sdk.core.TripListener;
@@ -45,7 +47,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, OnSuccessListener<Location> {
 
     private String trackingId = "TELIVERTRK_100", username = "driver_1";
 
@@ -109,9 +111,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setTexts(txtProcessing, txtPickedUp, txtDelivered);
         setImages(imgProcessing, imgPickedUp, imgDelivered);
         Teliver.identifyUser(new UserBuilder(username).setUserType(UserBuilder.USER_TYPE.OPERATOR).registerPush().build());
-        if (Utils.checkPermission(this))
-            //    checkGps();
-            txtProcessing.setEnabled(true);
+        if (Utils.checkLPermission(this))
+            Utils.enableGPS(this, this);
+        txtProcessing.setEnabled(true);
         imgProcessing.setEnabled(true);
     }
 
@@ -286,13 +288,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case Constants.COARSE_LOCATION_PERMISSION:
-                if (grantResults[0] != PackageManager.PERMISSION_GRANTED)
-                    finish();
-                else checkGps();
-                break;
+        if (requestCode == 115) {
+            if (!Utils.isPermissionOk(grantResults)) {
+                Toast.makeText(this, "Location permission denied", Toast.LENGTH_SHORT).show();
+                finish();
+            } else Utils.enableGPS(this, this);
         }
+    }
+
+
+    @Override
+    public void onSuccess(Location location) {
+        Log.e("onSuccess::", location.getLatitude() + "");
     }
 
     private void changeColors(TextView txtView, ImageView imgLine, ImageView img) {

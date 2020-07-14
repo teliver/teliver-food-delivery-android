@@ -1,7 +1,7 @@
 package com.customer;
 
 import android.content.SharedPreferences;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
 
 import com.teliver.sdk.core.Teliver;
 
