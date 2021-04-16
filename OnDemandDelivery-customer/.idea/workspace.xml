@@ -7,20 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ff65b0d-86fb-4bce-b257-cece4febf918" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../OnDemandDelivery-driver/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-driver/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-driver/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-driver/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-driver/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-driver/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-driver/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-driver/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-driver/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-driver/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-driver/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-driver/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-driver/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-driver/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-driver/build.gradle" afterDir="false" />
@@ -256,10 +245,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="514" y="57" key="#OnDemandDelivery-customer-app" timestamp="1618569040724">
+    <state x="514" y="57" key="#OnDemandDelivery-customer-app" timestamp="1618575882588">
       <screen x="55" y="21" width="1545" height="879" />
     </state>
-    <state x="514" y="57" key="#OnDemandDelivery-customer-app/55.21.1545.879@55.21.1545.879" timestamp="1618569040724" />
+    <state x="514" y="57" key="#OnDemandDelivery-customer-app/55.21.1545.879@55.21.1545.879" timestamp="1618575882588" />
     <state x="615" y="208" key="FileChooserDialogImpl" timestamp="1618569047183">
       <screen x="55" y="21" width="1545" height="879" />
     </state>
