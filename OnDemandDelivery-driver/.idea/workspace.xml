@@ -7,24 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a14e369b-2aef-40e3-b14f-b10dd3931732" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../OnDemandDelivery-customer/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-customer/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-customer/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-customer/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-customer/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-customer/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-customer/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-customer/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-customer/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-customer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-customer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-customer/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-customer/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-customer/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-customer/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnDemandDelivery-customer/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../OnDemandDelivery-customer/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +64,7 @@
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
-  <component name="RunManager" selected="Android App.OnDemandDelivery-driver-app">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="HTML_FILE_NAME" />
@@ -164,7 +147,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="OnDemandDelivery-driver.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -255,5 +238,9 @@
       <screen x="55" y="21" width="1545" height="879" />
     </state>
     <state x="514" y="57" key="#OnDemandDelivery-driver-app/55.21.1545.879@55.21.1545.879" timestamp="1618569363485" />
+    <state x="514" y="57" key="#app" timestamp="1618576227576">
+      <screen x="55" y="21" width="1545" height="879" />
+    </state>
+    <state x="514" y="57" key="#app/55.21.1545.879@55.21.1545.879" timestamp="1618576227576" />
   </component>
 </project>
