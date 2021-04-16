@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OnDemandDelivery-customer.iml" filepath="$PROJECT_DIR$/OnDemandDelivery-customer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/OnDemandDelivery-customer-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/OnDemandDelivery-customer-app.iml" group="OnDemandDelivery-customer/app" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/teliver-food-delivery-android-OnDemandDelivery-customer.iml" filepath="$PROJECT_DIR$/.idea/modules/teliver-food-delivery-android-OnDemandDelivery-customer.iml" group="OnDemandDelivery-customer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OnDemandDelivery-customer.iml" filepath="$PROJECT_DIR$/.idea/modules/OnDemandDelivery-customer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/OnDemandDelivery-customer.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/OnDemandDelivery-customer.app.iml" />
     </modules>
   </component>
 </project>
